@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html{
+    max-width: 1440px;
+    background-color: #e6e6e6;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.navbar{
+    display:flex;
+    justify-content: end;
+    background-color: #e6e6e6;
+    border-bottom: 1px solid black;
+    padding: 30px;
+    color: black;
+}
+
+
+.navbar ul{ 
+    display:flex;
+}
+
+.navbar li{
+    list-style-type: none;
+    margin-right: 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #e6e6e6;
+}
+
+.header-in-home h1{
+    display: flex;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 700;
+}
+
+.button-in-home{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.button-in-home button{
+    font-size: 16px;
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s ease-in-out;
+}
+
+.button-in-home button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.data-in-home{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.owner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.owner h1{
+    font-size: 32px;
+    margin: 30px;
+}
+
+.owner h2{
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.owner p{
+    margin-top: 30px;
+    font-size: 14px;
+    text-align: center;
+    padding: 0 20% 0 20%;
+}
+
+.admin-data{
+    width: 100%;
+}
+
+.create-user{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0 0 50px 0;
+}
+
+.create-user input{
+    width: 25%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    transition: all 0.1s ease-in-out;
+}
+
+.create-user input:hover{
+    transform: scale(1.05);
+}
+
+.create-user button{
+    width: 10%;
+    border-radius: 5px;
+    border: none;
+    background-color: #5E5BFF;
+    color: #fff;
+    transition: 0.1s ease-in-out;
+}
+
+.create-user button:hover{
+    background-color: #403df9;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.table-width{
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse:separate;
+    border:solid #B9B9B9 1px;
+    border-radius:4px;
+    background-color: #fff;
+}
+
+td, th {
+    border-left:solid #B9B9B9 1px;
+    border-top:solid #B9B9B9 1px;
+    padding: 10px;
+}
+
+th {
+    background-color: #f5f5f5;
+    border-top: none;
+    
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}
+
+.button-in-table{
+
+}

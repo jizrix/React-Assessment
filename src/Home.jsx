@@ -9,6 +9,8 @@ const Home = () => {
     const [sector,setSector] = useState('');
     const [employees,setEmployees] = useState([]);
     const [reload, setReload] = useState(false);
+    const [allid,setAllid] = useState([])
+
 
     useEffect(()=>{
         const getData = async () => {
@@ -17,7 +19,8 @@ const Home = () => {
             );
             setEmployees(response.data);
         }
-          getData()
+          getData();
+          collectID();
     },[reload]);
 
     /// select Role
@@ -33,11 +36,12 @@ const Home = () => {
         );
     
         if (response.status === 200) {
-            setReload(!reload);
             alert('เพิ่มเรียบร้อย')
           }else{
             alert(`ติดปัญหา : ${response.status}`)
           }
+        
+        setReload(!reload);
       };
 
 
@@ -53,10 +57,43 @@ const Home = () => {
           }
       };
 
+
+    const collectID = async () => {
+        const pureID = employees.map(item=>item.id)
+        console.log(pureID)
+        setAllid(pureID)    
+    }
+
+    const remove = async (id) => {
+      const response = await axios.delete(
+        `https://jsd5-mock-backend.onrender.com/member/${id}`
+      );
+      if (response.status === 200) {
+          console.log('Deleted')
+        }else{
+          console.log('Error')
+        }
+    };
+
+
+    const removeAll = () => {
+      const ans = prompt(`แน่ใจนะที่จะลบทั้งหมด? พิมพ์ "ลบ" เพื่อยืนยัน`)
+      
+      if(ans === "ลบ"){
+        for(let i=0; i<allid.length; i++){
+          remove(allid[i])
+          console.log('Deleting ID : ' + allid[i] )
+        }   
+      }else{
+        alert('อะไรคือ : ' + ans + "?")
+      }
+      setReload(!reload)
+   }      
+
+
     return(
     <Layout>
         <div className="home">
-
 
             <div className="header-in-home">
                 <h1><strong>Generation Thailand</strong></h1>
@@ -68,7 +105,6 @@ const Home = () => {
                 <button onClick={()=>buttonHandler('user')}>User Home Sector</button>
                 <button onClick={()=>buttonHandler('admin')}>Admin Home Sector</button> 
             </div>
-
 
             <br/>
             <div className="data-in-home">
@@ -83,6 +119,7 @@ const Home = () => {
                 employees={employees}
                 removeData={removeData}
                 createData={createData}
+                removeAll={removeAll}
                 /> 
                 : ""
                 }

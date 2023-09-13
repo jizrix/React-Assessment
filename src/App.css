@@ -175,5 +175,47 @@ td:first-child, th:first-child {
 }
 
 .button-in-table{
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e51e1e;
+    color: #fff;
+    transition: 0.1s ease-in-out;
+}
 
+.button-in-table:hover{
+    background-color: #dd1313;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.action-table{
+    text-align: center;
+}
+
+.button-delete-all-box{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.button-delete-all{
+    width: 100px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    background-color: #e51e1e;
+    color: #fff;
+    transition: 0.1s ease-in-out;
+}
+
+.button-delete-all:hover{
+    background-color: #dd1313;
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.05);
 }

@@ -70,8 +70,6 @@ const Home = () => {
             </div>
 
 
-
-
             <br/>
             <div className="data-in-home">
                 {sector === "user" ? 
@@ -86,7 +84,7 @@ const Home = () => {
                 removeData={removeData}
                 createData={createData}
                 /> 
-                : "Not User or Admin"
+                : ""
                 }
             </div>
         </div>

@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react"
 import TableAdmin from "./Table-admin";
 import Form from "./Form";
-import axios from "axios";
 
 const Admin = ({setTitle,employees,removeData,createData,removeAll}) => {
-
-    const [allid,setAllid] = useState([])
 
     useEffect(()=>{
         setTitle('Home - Admin Sector')
